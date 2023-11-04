@@ -1,0 +1,123 @@
+:root{
+  --primaryFont: 'Fraunces', serif;
+  --secondaryFont: 'Montserrat', sans-serif;
+  --darkCyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --VerydarkBlue: hsl(212, 21%, 14%);
+  --Darkgrayishblue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+}
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+}
+body{
+  font-family: var(--primaryFont);
+  font-weight: 300;
+  background-color: var(--Cream);
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: var(--secondaryFont);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+p{
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+img{
+  max-width: 100%;
+}
+.card{
+  width: 600px;
+  display:flex;
+}
+.card_img{
+  flex-basis: 50%;
+}
+.card_img .desktop_img img {
+  border-radius: 10px 0 0 10px;
+  display: block;
+}
+.card_img .mobile_img img{
+  border-radius: 10px 10px 0 0;
+  display: none;
+}
+.card_body{
+  flex-basis: 50%;
+  background-color: var(--White);
+  border-radius: 0 10px 10px 0;
+  padding: 30px;
+}
+.card_body h2{
+  color: var(--VerydarkBlue);
+  font-size: 30px;
+}
+.card_body h6{
+  color: var(--Darkgrayishblue);
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-family: var(--primaryFont);
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.card_body p{
+  font-size: 14px;
+  color: var(--Darkgrayishblue);
+  line-height: 1.5em;
+  word-spacing: 2px;
+}
+.card_body p.price{
+  font-family: var(--secondaryFont);
+  color: var(--darkCyan);
+  font-size: 32px;
+}
+.card_body p.price span{
+  color: var(--primaryFont);
+  color: var(--Darkgrayishblue);
+  font-size: 14px;
+  text-decoration: line-through;
+  position: relative;
+  top: -5px;
+}
+.card_body button{
+  background-color: var(--darkCyan);
+  border: none;
+  width: 100%;
+  padding: 15px;
+  color: var(--White);
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.card_body button img{
+  display: inline-block;
+  padding-right: 10px;
+  position: relative;
+  top: 3px;
+}
+/* Responsive */
+@media only screen and (max-width:600px){
+  .card{
+    width: 90%;
+    flex-direction: column;
+  }
+  .card_img .mobile_img img{
+    display: block;
+  }
+  .card_img .desktop_img img {
+    display: none;
+  }
+  .card_body{
+    border-radius: 0 0 10px 10px;
+  }
+}
